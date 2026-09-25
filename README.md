@@ -3,28 +3,28 @@
   <img src="./assets/aedes-x-logo-horizontal.png" alt="AEDES-X Logo" width="380" />
 
   # 🦟 AEDES-X · IoT Rangers
-  ### **Perlindungan Lebih Pintar · Smart Mosquito Trap Prototype**
-  *Inovasi STEM & Kawalan IoT Berteraskan Komuniti — SJKT Ladang Rinching*
+  ### **Smarter Protection · Smart Mosquito Trap Prototype**
+  *Community-Centric STEM Innovation & IoT Control — SJKT Ladang Rinching*
 
   <br/>
 
-  [![Peringkat](https://img.shields.io/badge/Peringkat-Kebangsaan_2026-4cffaf?style=for-the-badge&logo=target&logoColor=06100d&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
-  [![Status](https://img.shields.io/badge/Status-Prototaip_Tervalidasi-37d8ff?style=for-the-badge&logo=checkmarx&logoColor=06100d&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
-  [![Bahasa](https://img.shields.io/badge/Dwi_Bahasa-BM_%7C_EN-7568ff?style=for-the-badge&logo=googletranslate&logoColor=white&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
-  [![SDG](https://img.shields.io/badge/SDG-Goal_3_&_9-ff7043?style=for-the-badge&logo=unitednations&logoColor=white&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
-  [![License](https://img.shields.io/badge/Lesen-Hakcipta_Terpelihara-grey?style=for-the-badge&labelColor=06100d)](LICENSE)
+  [![Stage](https://img.shields.io/badge/Stage-National_Level_2026-4cffaf?style=for-the-badge&logo=target&logoColor=06100d&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
+  [![Status](https://img.shields.io/badge/Status-Validated_Prototype-37d8ff?style=for-the-badge&logo=checkmarx&logoColor=06100d&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
+  [![Language](https://img.shields.io/badge/Dual_Language-BM_%7C_EN-7568ff?style=for-the-badge&logo=googletranslate&logoColor=white&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
+  [![SDG](https://img.shields.io/badge/UN_SDG-Goals_3_&_9-ff7043?style=for-the-badge&logo=unitednations&logoColor=white&labelColor=06100d)](https://github.com/shamsir99/Aedes-X-Landing-page)
+  [![License](https://img.shields.io/badge/License-All_Rights_Reserved-grey?style=for-the-badge&labelColor=06100d)](LICENSE)
 
   <br/>
 
   <p align="center">
-    <a href="#-tentang-aedes-x">Tentang Projek</a> •
-    <a href="#-ciri-ciri-utama-landing-page">Ciri-Ciri Web</a> •
-    <a href="#-seni-bina-sistem-hardware--iot">Seni Bina Sistem</a> •
-    <a href="#-3-mod-operasi">3 Mod Operasi</a> •
-    <a href="#-papan-pemuka-iot">Papan Pemuka</a> •
-    <a href="#-matriks-perbandingan">Perbandingan</a> •
-    <a href="#-panduan-pemasangan--deploy">Deployment</a> •
-    <a href="#-pasukan--penghargaan">Pasukan</a>
+    <a href="#-executive-summary">Executive Summary</a> •
+    <a href="#-key-landing-page-features">Web Features</a> •
+    <a href="#-system-architecture-hardware--iot">System Architecture</a> •
+    <a href="#-3-flexible-operating-modes">3 Operating Modes</a> •
+    <a href="#-smart-iot-dashboard">IoT Dashboard</a> •
+    <a href="#-comparative-benchmark">Comparison</a> •
+    <a href="#-installation--deployment-guide">Deployment</a> •
+    <a href="#-team--acknowledgments">Team & Partners</a>
   </p>
 
   <img src="./assets/aedes-x-hero.png" alt="AEDES-X Hero Prototype" width="780" style="border-radius: 18px; margin-top: 15px;" />
@@ -33,141 +33,141 @@
 
 ---
 
-## 📖 Ringkasan Eksekutif (Executive Summary)
+## 📖 Executive Summary
 
-**AEDES-X** merupakan sebuah prototaip perangkap nyamuk pintar generasi baharu yang direka dan dibangunkan oleh pasukan **IoT Rangers** dari **SJKT Ladang Rinching**.
+**AEDES-X** is a next-generation smart mosquito trap prototype designed and engineered by **IoT Rangers** from **SJKT Ladang Rinching**.
 
-Projek ini menggabungkan prinsip sains tarikan semulajadi dan kejuruteraan moden:
-- 🧪 **Tarikan CO₂ Biologikal** (tindak balas yis, gula dan air suam).
-- 💡 **Tarikan Cahaya Gelombang UV**.
-- 🌀 **Aliran Udara Sedutan Kipas DC** ke dalam bakul jaring halus berkeselamatan.
-- 📱 **Sistem Kawalan IoT Berasaskan Mikropengawal ESP32** dengan dwi-kawalan (Papan Pemuka Web Hotspot Setempat + Butang Fizikal Tanpa Talian).
+The project synergizes natural biological attraction principles with modern embedded IoT engineering:
+- 🧪 **Biological CO₂ Attraction** (organic yeast, sugar, and warm water fermentation).
+- 💡 **UV Optical Attraction Waveband** to guide mosquitoes directly toward the intake.
+- 🌀 **Centrifugal Airflow Suction** via a DC fan into a secured escape-proof fine-mesh chamber.
+- 📱 **ESP32 Microcontroller IoT Architecture** with dual control schemes (Local Web Hotspot Dashboard + Offline Physical Push Button).
 
-Landing page ini dicipta khusus dengan mutu visual ultra-premium, interaktiviti ala produk Apple, dan sokongan penuh dwibahasa (Bahasa Melayu & English) untuk mempamerkan projek di **Peringkat Kebangsaan 2026**.
+This landing page is engineered with high-end aesthetic fidelity, an Apple-inspired scroll-driven interactive experience, and seamless bilingual support (Bahasa Melayu & English) to present the innovation at the **2026 National STEM Competition**.
 
 ---
 
-## ✨ Ciri-Ciri Utama Landing Page
+## ✨ Key Landing Page Features
 
-| Ciri | Penerangan Teknikal |
+| Feature | Technical Implementation |
 | :--- | :--- |
-| 🎬 **Cinematic Scroll Experience** | Simulasi video 120-frame WebP bersiri yang dilukis secara dinamik ke HTML5 `<canvas>` mengikut kedudukan skrol pengguna. |
-| 🔍 **Interactive 5-Stage Exploded View** | Paparan komponen terurai (exploded diagram) interaktif yang menonjolkan 5 sub-sistem utama AEDES-X beserta penerangan teliti. |
-| 🕹️ **Interactive 3-Mode Console** | Konsol bertukar video langsung (*Manual*, *Auto LDR*, *Pemasa*) dengan pemapar status masa nyata dan penerangan konteks kegunaan. |
-| 📱 **Phone Mockup Dashboard Explorer** | Interaksi langsung skrin papan pemuka telefon pintar (Utama, Kawalan, Pemasa, Sistem) beserta kad peringatan penyelenggaraan pintar. |
-| ⚖️ **Comparison Lab (Head-to-Head)** | Matriks perbandingan interaktif AEDES-X melawan kaedah konvensional (Fogging, Semburan Aerosol, Lingkaran Ubat Nyamuk, Perangkap UV Biasa). |
-| 📊 **Early Validation Metrics** | Laporan telus data ujian makmal awal (kependaman 0.6s - 8.4s) dengan penafian saintifik beretika sebelum ujian rasmi September 2026. |
-| 🌐 **Sistem Dwi-Bahasa (BM & EN)** | Penukaran bahasa serta-merta tanpa muat semula halaman melalui *DOM dataset binding* dan *localStorage*. |
-| ⚡ **Zero-Dependency Native Stack** | Dibina 100% menggunakan Vanilla HTML5, CSS3 moden, dan Vanilla JavaScript tulen — pantas, ringan, tanpa komplikasi *build step*. |
+| 🎬 **Cinematic Scroll Experience** | 120-frame serialized WebP sequence dynamically drawn onto an HTML5 `<canvas>` synced with viewport scroll position. |
+| 🔍 **Interactive 5-Stage Exploded View** | Exploded component view highlighting the 5 key hardware sub-systems with active stage indicators. |
+| 🕹️ **Interactive 3-Mode Console** | Real-time video switching showcase (*Manual*, *Auto LDR*, *Timer*) with contextual triggers and recommended environments. |
+| 📱 **Phone Mockup Dashboard Explorer** | Interactive phone UI viewer navigating 4 live screens (Home, Control, Timer, System) with smart maintenance reminders. |
+| ⚖️ **Head-to-Head Comparison Lab** | 3D-tilted product comparison matrix evaluating AEDES-X against Fogging, Aerosol, Mosquito Coils, and Traditional UV Traps. |
+| 📊 **Transparent Early Validation** | Documented bench-test telemetry (0.6s – 8.4s response times) accompanied by rigorous scientific disclaimers. |
+| 🌐 **Zero-Reload Dual Language (BM / EN)** | Instant language switching without page reloads using DOM dataset binding and persistent `localStorage`. |
+| ⚡ **Zero-Dependency Native Stack** | Crafted in pure Vanilla HTML5, modern CSS3 custom properties, and Vanilla JavaScript for instant zero-build rendering. |
 
 ---
 
-## 🔬 Seni Bina Sistem (Hardware & IoT)
+## 🔬 System Architecture (Hardware & IoT)
 
 ```mermaid
 graph TD
-    subgraph "1. KUASA & INPUT"
-        Solar[Panel Solar + Bateri] --> PwrMgmt[Modul Pengurusan Kuasa]
-        LDR[Sensor Cahaya LDR] --> ESP32
-        Button[Butang Fizikal Luar Talian] --> ESP32
+    subgraph "1. POWER & INPUT"
+        Solar[Solar Panel + Battery Storage] --> PwrMgmt[Power Management Module]
+        LDR[LDR Ambient Light Sensor] --> ESP32
+        Button[Offline Physical Push Button] --> ESP32
     end
 
-    subgraph "2. OTAK SISTEM"
-        ESP32[Mikropengawal ESP32]
-        AP[Wi-Fi AP Hotspot Setempat] <--> ESP32
-        WebDash[Papan Pemuka Web Pelayar] <--> AP
+    subgraph "2. SYSTEM CONTROLLER"
+        ESP32[ESP32 Microcontroller Core]
+        AP[Local Wi-Fi Access Point] <--> ESP32
+        WebDash[Mobile Web Dashboard] <--> AP
     end
 
-    subgraph "3. MEKANISME TARIKAN"
-        ESP32 -->|Kawalan Suis / PWM| UV[Lampu UV LED]
-        CO2[Penjana CO2 Semula Jadi<br/>Campuran Yis + Gula] -.->|Lepasan Aroma CO2| Nyamuk((Nyamuk Aedes))
-        UV -.->|Panduan Visual| Nyamuk
+    subgraph "3. ATTRACTION MECHANISM"
+        ESP32 -->|Switch / PWM Control| UV[UV LED Array]
+        CO2[Natural CO2 Generator<br/>Yeast + Sugar Reaction] -.->|CO2 Emission Plume| Mosquito((Aedes Mosquito))
+        UV -.->|Visual Guidance| Mosquito
     end
 
-    subgraph "4. TANGKAPAN & KAWALAN"
-        ESP32 -->|Pengaktifan| Fan[Kipas Sedutan Udara]
-        Nyamuk --> Fan
-        Fan --> Mesh[Bakul Jaring Halus Anti-Lepas]
+    subgraph "4. CAPTURE & CONTAINMENT"
+        ESP32 -->|Fan Driver| Fan[High-Efficiency Suction Fan]
+        Mosquito --> Fan
+        Fan --> Mesh[Fine-Mesh Retention Basket]
     end
 ```
 
 <div align="center">
-  <img src="./assets/aedes-x-exploded-transparent.png" alt="Pandangan Terurai AEDES-X" width="550" />
-  <p><em>Rajah Komponen Terurai 5 Peringkat AEDES-X</em></p>
+  <img src="./assets/aedes-x-exploded-transparent.png" alt="AEDES-X Exploded Component View" width="550" />
+  <p><em>AEDES-X 5-Stage Hardware Exploded Component Diagram</em></p>
 </div>
 
 ---
 
-## 🕹️ 3 Mod Operasi Fleksibel
+## 🕹️ 3 Flexible Operating Modes
 
-1. **Mod Manual (Direct Control)**
-   - Kawalan hidup/mati secara terus pada papan pemuka telefon atau butang fizikal.
-   - Sesuai untuk demonstrasi, ujian makmal dan ruang tamu kediaman.
-2. **Mod Auto LDR (Light Dependent Resistor)**
-   - Aktif secara automatik mengikut tahap keamatan cahaya persekitaran (waktu senja dan fajar di mana nyamuk Aedes paling agresif).
-   - Menjimatkan penggunaan tenaga suria pada waktu tengah hari.
-3. **Mod Pemasa (Timer / Scheduled Operation)**
-   - Beroperasi mengikut selang waktu yang diprogramkan (cth: beroperasi sebelum waktu murid tiba dan selepas tamat sesi persekolahan).
-   - Sangat ideal untuk sekolah, dewan komuniti dan premis pejabat.
+1. **Manual Mode (Direct Control)**
+   - Instant manual on/off toggling via the mobile dashboard or physical push button.
+   - Ideal for live demonstrations, laboratory testing, and targeted indoor use.
+2. **Auto LDR Mode (Light-Dependent Sensor)**
+   - Automatically activates based on ambient light thresholds (specifically dusk and dawn when *Aedes aegypti* and *Aedes albopictus* are most active).
+   - Maximizes battery conservation during broad daylight hours.
+3. **Timer Mode (Scheduled Operation)**
+   - Operates on user-defined time intervals (e.g., active right before students arrive and after school dismissal).
+   - Tailor-made for schools, administrative offices, and community centers.
 
 ---
 
-## 📱 Papan Pemuka Pintar (IoT Dashboard)
+## 📱 Smart IoT Dashboard
 
-Papan pemuka AEDES-X dihoskan terus dari pelayan mikro ESP32 (Local Web Server) melalui rangkaian Wi-Fi Hotspot tertutup:
+The AEDES-X web dashboard is hosted directly by the ESP32 on-chip HTTP web server via a self-contained local Wi-Fi Access Point:
 
 <div align="center">
   <table>
     <tr>
-      <td align="center"><b>01. Utama</b></td>
-      <td align="center"><b>02. Kawalan</b></td>
-      <td align="center"><b>03. Pemasa</b></td>
-      <td align="center"><b>04. Sistem</b></td>
+      <td align="center"><b>01. Home</b></td>
+      <td align="center"><b>02. Control</b></td>
+      <td align="center"><b>03. Timer</b></td>
+      <td align="center"><b>04. System</b></td>
     </tr>
     <tr>
-      <td><img src="./assets/dashboard-utama.png" width="180" /></td>
-      <td><img src="./assets/dashboard-kawalan.png" width="180" /></td>
-      <td><img src="./assets/dashboard-pemasa.png" width="180" /></td>
-      <td><img src="./assets/dashboard-sistem.png" width="180" /></td>
+      <td><img src="./assets/dashboard-utama.png" width="180" alt="Dashboard Home" /></td>
+      <td><img src="./assets/dashboard-kawalan.png" width="180" alt="Dashboard Control" /></td>
+      <td><img src="./assets/dashboard-pemasa.png" width="180" alt="Dashboard Timer" /></td>
+      <td><img src="./assets/dashboard-sistem.png" width="180" alt="Dashboard System" /></td>
     </tr>
   </table>
-  <p><em>Paparan 4 Skrin Utama Papan Pemuka Mudah Alih AEDES-X</em></p>
+  <p><em>AEDES-X Mobile-First Web Dashboard Interface</em></p>
 </div>
 
-- **Peringatan Penyelenggaraan Pintar**: Kiraan hari berkala untuk pembersihan jaring dan penggantian bahan yis CO₂.
-- **Fail-Safe Butang Fizikal**: Jika sambungan telefon atau hotspot terputus, butang fizikal pada badan peranti tetap boleh mengubah mod tanpa sebarang gangguan.
+- **Smart Maintenance Notifications**: Proactive cycle countdowns reminding operators when to empty the mesh basket and replenish the yeast-sugar CO₂ mixture.
+- **Fail-Safe Offline Mode**: If wireless connectivity or phone access drops, the hardware button on the enclosure seamlessly cycles operating modes.
 
 ---
 
-## ⚖️ Matriks Perbandingan Kaedah Kawalan Nyamuk
+## ⚖️ Comparative Benchmark Matrix
 
-| Parameter | Fogging Berkala | Semburan Aerosol | Lingkaran Ubat Nyamuk | Perangkap UV Biasa | 🦟 **AEDES-X IoT** |
+| Parameter | Periodic Fogging | Aerosol Spray | Mosquito Coil | Traditional UV Trap | 🦟 **AEDES-X IoT** |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Tarikan Spesifik CO₂** | ❌ Tiada | ❌ Tiada | ❌ Tiada | ❌ Tiada | ✅ **Ada (Yis & Gula)** |
-| **Bebas Racun Kimia** | ❌ Toksik | ❌ Beracun | ❌ Asap karsinogen | ✅ Selamat | ✅ **100% Mesra Alam** |
-| **Kawalan Pintar / IoT** | ❌ Manual | ❌ Manual | ❌ Tiada | ❌ Suis asas | ✅ **Web App + 3 Mod** |
-| **Penderia Cahaya (LDR)**| ❌ Tiada | ❌ Tiada | ❌ Tiada | ❌ Jarang ada | ✅ **Sensor Terbina** |
-| **Sandaran Luar Talian** | — | — | — | — | ✅ **Butang Fizikal** |
-| **Peringatan Servis** | ❌ Jadual luar | ❌ Tiada | ❌ Tiada | ❌ Tiada | ✅ **Notifikasi Digital** |
+| **CO₂ Biomimetic Lure** | ❌ No | ❌ No | ❌ No | ❌ No | ✅ **Yes (Yeast + Sugar)** |
+| **Chemical-Free / Non-Toxic** | ❌ Toxic mist | ❌ Chemical residue | ❌ Carcinogenic smoke | ✅ Safe | ✅ **100% Eco-Friendly** |
+| **Smart IoT Control** | ❌ Manual | ❌ Manual | ❌ None | ❌ Basic rocker switch | ✅ **Web App + 3 Modes** |
+| **Ambient Light Sensor** | ❌ No | ❌ No | ❌ No | ❌ Rare | ✅ **Integrated LDR** |
+| **Offline Hardware Fail-Safe** | — | — | — | — | ✅ **Physical Push Button** |
+| **Maintenance Tracking** | ❌ Manual logs | ❌ None | ❌ None | ❌ None | ✅ **Digital Reminders** |
 
 ---
 
-## 🌍 Matlamat Pembangunan Mampan (SDG Alignment)
+## 🌍 UN Sustainable Development Goals (SDG Alignment)
 
-Projek AEDES-X dibangunkan bukan sekadar alat teknologi, tetapi penyelesaian berimpak sosial:
+The AEDES-X initiative is engineered to deliver measurable social and educational impact:
 
 <div align="center">
   <table>
     <tr>
       <td width="50%" align="center">
-        <img src="./assets/sdg-3.png" width="140" /><br/>
-        <b>SDG 3: Kesihatan Baik dan Kesejahteraan</b><br/>
-        <sub>Membantu mencegah penularan demam denggi dalam komuniti sekolah dan kediaman tanpa mencemarkan udara dengan bahan kimia berbahaya.</sub>
+        <img src="./assets/sdg-3.png" width="140" alt="SDG 3 Logo" /><br/>
+        <b>SDG 3: Good Health and Well-Being</b><br/>
+        <sub>Mitigating community dengue outbreaks in residential areas and schools without exposing residents to hazardous chemical residues or respiratory irritants.</sub>
       </td>
       <td width="50%" align="center">
-        <img src="./assets/sdg-9.png" width="140" /><br/>
-        <b>SDG 9: Industri, Inovasi dan Infrastruktur</b><br/>
-        <sub>Memupuk bakat muda dalam bidang sains gunaan, IoT, pengaturcaraan mikropengawal dan reka bentuk kejuruteraan lestari.</sub>
+        <img src="./assets/sdg-9.png" width="140" alt="SDG 9 Logo" /><br/>
+        <b>SDG 9: Industry, Innovation, and Infrastructure</b><br/>
+        <sub>Nurturing primary school innovators in applied STEM, IoT hardware programming, sensor integration, and sustainable product design.</sub>
       </td>
     </tr>
   </table>
@@ -175,59 +175,59 @@ Projek AEDES-X dibangunkan bukan sekadar alat teknologi, tetapi penyelesaian ber
 
 ---
 
-## 🚀 Panduan Pemasangan & Menjalankan Laman Web
+## 🚀 Installation & Deployment Guide
 
-Laman web ini adalah **100% Static HTML/CSS/JS** — tidak memerlukan pemasangan npm, node_modules, atau kompilasi rumit!
+This landing page is built using **100% Static HTML/CSS/JS** — zero package managers, zero build steps, and zero dependencies required!
 
-### 1. Menjalankan Secara Tempatan (Localhost)
-Untuk memastikan video dan kanvas frame berjalan lancar tanpa sekatan CORS pelayar:
+### 1. Running Locally
+To ensure video playback and scroll canvas frames stream smoothly without local file CORS restrictions:
 
 ```bash
-# Klon repositori
+# Clone the repository
 git clone https://github.com/shamsir99/Aedes-X-Landing-page.git
 cd Aedes-X-Landing-page
 
-# Jalankan pelayan web ringkas (menggunakan Python):
+# Launch a lightweight web server (Python 3):
 python -m http.server 8000
 
-# Atau menggunakan Node (npx):
+# Or using Node (npx):
 npx serve .
 ```
-Buka pelayar web dan layari `http://localhost:8000`.
+Open your browser and navigate to `http://localhost:8000`.
 
-### 2. Pelancaran ke GitHub Pages (1-Klik)
-1. Pergi ke tab **Settings** di repositori GitHub anda.
-2. Pada menu kiri, klik **Pages**.
-3. Di bahagian **Build and deployment > Source**, pilih `Deploy from a branch`.
-4. Pilih cawangan `main` dan direktori `/(root)`.
-5. Klik **Save**. Laman anda akan aktif secara percuma dalam masa 1 minit!
+### 2. Deploying to GitHub Pages (1-Click)
+1. Navigate to the **Settings** tab in this GitHub repository.
+2. Select **Pages** from the left navigation menu.
+3. Under **Build and deployment > Source**, select `Deploy from a branch`.
+4. Choose the `main` branch and the `/(root)` directory.
+5. Click **Save**. Your live website will be accessible globally within moments!
 
 ---
 
-## 📁 Struktur Fail Repositori
+## 📁 Repository Directory Structure
 
 ```text
 ├── assets/
-│   ├── aedes-x-cinematic-v2.mp4       # Video cinematic resolusi tinggi
-│   ├── aedes-x-hero.png               # Visual render hero produk
-│   ├── aedes-x-logo-horizontal.png    # Logo rasmi horizontal AEDES-X
-│   ├── aedes-x-logo-stacked.png       # Logo rasmi bertingkat
-│   ├── aedes-x-mark.png               # Simbol ikon jenama AEDES-X
-│   ├── aedes-x-exploded-transparent.png # Rajah komponen terurai
-│   ├── cinematic-frames/              # 120 bingkai WebP untuk scroll canvas
-│   ├── dashboard-*.png                # Tangkapan skrin antara muka ESP32
-│   ├── *-mode.mp4                     # Video demonstrasi 3 mod operasi
-│   ├── school-logo-transparent.png    # Logo rasmi SJKT Ladang Rinching
-│   └── sdg-*.png                      # Lencana rasmi SDG PBB
-├── index.html                         # Struktur semantik HTML5 & dwi-bahasa
-├── styles.css                         # Sistem reka bentuk CSS bertaraf tinggi
-├── app.js                             # Enjin skrol kanvas, video switcher & interaktiviti
-└── README.md                          # Dokumentasi lengkap & analisis projek
+│   ├── aedes-x-cinematic-v2.mp4       # High-definition cinematic background video
+│   ├── aedes-x-hero.png               # High-resolution 3D product hero rendering
+│   ├── aedes-x-logo-horizontal.png    # Official horizontal brand identity logo
+│   ├── aedes-x-logo-stacked.png       # Official stacked logo variation
+│   ├── aedes-x-mark.png               # Minimal brand icon mark
+│   ├── aedes-x-exploded-transparent.png # Transparent exploded component diagram
+│   ├── cinematic-frames/              # 120 WebP sequence frames for canvas scroll engine
+│   ├── dashboard-*.png                # High-fidelity ESP32 dashboard screen captures
+│   ├── *-mode.mp4                     # Demonstration clips for each of the 3 modes
+│   ├── school-logo-transparent.png    # SJKT Ladang Rinching school crest
+│   └── sdg-*.png                      # Official United Nations SDG emblems
+├── index.html                         # Semantic HTML5 markup with dual-language bindings
+├── styles.css                         # Custom CSS design system with micro-interactions
+├── app.js                             # Canvas scroll controller, mode switcher & i18n logic
+└── README.md                          # Comprehensive project documentation
 ```
 
 ---
 
-## 👥 Pasukan & Penghargaan
+## 👥 Team & Acknowledgments
 
 <div align="center">
   <img src="./assets/school-logo-transparent.png" alt="SJKT Ladang Rinching" width="90" />
@@ -235,12 +235,12 @@ Buka pelayar web dan layari `http://localhost:8000`.
   ### **IOT RANGERS**
   **SJKT LADANG RINCHING · 2026**
   
-  *Dengan Kerjasama & Sokongan Daripada:*<br/>
+  *In Proud Collaboration & Partnership With:*<br/>
   <br/>
-  <img src="./assets/stem-logo.png" height="42" alt="STEM" /> &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="./assets/setia-logo.png" height="40" alt="Setia" /> &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="./assets/utm-logo.png" height="42" alt="UTM" />
+  <img src="./assets/stem-logo.png" height="42" alt="STEM Club" /> &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./assets/setia-logo.png" height="40" alt="SP Setia Foundation" /> &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./assets/utm-logo.png" height="42" alt="Universiti Teknologi Malaysia" />
   
   <br/><br/>
-  <p><em>"Inovasi Kecil. Impak Yang Bermakna."</em></p>
+  <p><em>"Small Innovation. Meaningful Impact."</em></p>
 </div>
