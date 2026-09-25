@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06100d">
+  <meta name="description" content="AEDES-X — prototaip perangkap nyamuk pintar oleh IoT Rangers, SJKT Ladang Rinching.">
+  <title>AEDES-X — IoT Rangers</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2306100d'/%3E%3Cpath d='M17 44 30 15h5l13 29h-9l-2-6H27l-2 6zm13-13h5l-2.5-8z' fill='%234cffaf'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span></span></div>
+
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#home" aria-label="AEDES-X home">
+      <img src="assets/aedes-x-logo-horizontal.png" alt="AEDES-X">
+    </a>
+    <nav aria-label="Navigasi utama">
+      <a href="#system" data-copy="navSystem">Sistem</a>
+      <a href="#modes" data-copy="navModes">3 Mod</a>
+      <a href="#dashboard" data-copy="navDashboard">Papan Pemuka</a>
+      <a href="#compare" data-copy="navCompare">Bandingkan</a>
+      <a href="#validation" data-copy="navValidation">Validasi</a>
+    </nav>
+    <div class="header-actions">
+      <span class="national-tag" data-copy="nationalTag">PERINGKAT KEBANGSAAN · 2026</span>
+      <div class="language-toggle" role="group" aria-label="Pilihan bahasa">
+        <button class="active" data-lang="ms" aria-pressed="true">BM</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="scroll-cinema" id="home" aria-label="Pengenalan cinematic AEDES-X">
+      <div class="cinema-sticky">
+        <canvas id="cinemaCanvas" aria-label="Animasi AEDES-X mengikut pergerakan skrol"></canvas>
+        <video class="cinema-fallback" muted playsinline preload="metadata" aria-hidden="true"><source src="assets/aedes-x-cinematic-v2.mp4" type="video/mp4"></video>
+        <div class="cinema-shade" aria-hidden="true"></div>
+        <div class="cinema-loader" id="cinemaLoader"><span></span><b data-copy="loadingExperience">MENYEDIAKAN PENGALAMAN</b></div>
+
+        <div class="cinema-copy cinema-intro active" data-beat="0">
+          <p class="eyebrow"><span></span><b>IOT RANGERS · SJKT LADANG RINCHING</b></p>
+          <h1 data-copy="heroTitle">PERLINDUNGAN<br><em>LEBIH PINTAR.</em></h1>
+          <p class="lede" data-copy="heroText">Prototaip perangkap nyamuk pintar yang menggabungkan tarikan CO₂, cahaya UV, aliran udara dan kawalan IoT.</p>
+          <div class="hero-stats"><div><strong>03</strong><span data-copy="heroStatModes">mod operasi</span></div><div><strong>02</strong><span data-copy="heroStatControls">kaedah kawalan</span></div><div><strong>05</strong><span data-copy="heroStatStages">peringkat sistem</span></div></div>
+        </div>
+
+        <div class="cinema-copy cinema-beat" data-beat="1">
+          <span class="beat-number">01</span><p data-copy="beat1Label">ISYARAT TARIKAN</p><h2 data-copy="beat1Title">Nyamuk mengesan<br>isyarat CO₂.</h2>
+        </div>
+        <div class="cinema-copy cinema-beat align-right" data-beat="2">
+          <span class="beat-number">02</span><p data-copy="beat2Label">TARIKAN TAMBAHAN</p><h2 data-copy="beat2Title">Cahaya UV<br>memandu laluan.</h2>
+        </div>
+        <div class="cinema-copy cinema-beat" data-beat="3">
+          <span class="beat-number">03</span><p data-copy="beat3Label">ALIRAN UDARA</p><h2 data-copy="beat3Title">Kipas menarik nyamuk<br>ke ruang tangkapan.</h2>
+        </div>
+        <div class="cinema-copy cinema-end align-right" data-beat="4">
+          <p data-copy="heroEndLabel">INOVASI STEM · KAWALAN IoT</p><h2>AEDES-X</h2><a class="button primary" href="#system"><span data-copy="exploreSystem">Terokai sistem</span> <b>↘</b></a>
+        </div>
+        <div class="cinema-progress"><span id="cinemaProgress"></span></div>
+        <div class="cinema-scroll-guide" id="cinemaScrollGuide" aria-hidden="true">
+          <span class="scroll-mouse"><i></i></span>
+          <b data-copy="scrollGuide">SKROL UNTUK MENGGERAKKAN CERITA</b>
+          <span class="scroll-chevrons">⌄⌄</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="problem section" id="problem">
+      <div class="section-head reveal">
+        <p class="kicker" data-copy="challengeKicker">01 · CABARAN</p>
+        <h2 data-copy="problemTitle">Ancaman kecil.<br>Impak yang besar.</h2>
+        <p data-copy="problemText">Nyamuk Aedes aktif di persekitaran komuniti. Kami mahu membantu mengurangkan pendedahan melalui satu penyelesaian bebas semburan kimia yang mudah dipantau.</p>
+      </div>
+      <div class="challenge-grid">
+        <article class="challenge-card reveal">
+          <div class="challenge-image"><img src="assets/challenge-daily-space.webp" alt="Persekitaran rumah dan sekolah yang menjadi ruang aktiviti harian"></div><span>01</span>
+          <div class="challenge-copy"><h3 data-copy="challenge1Title">Aktif di ruang harian</h3>
+          <p data-copy="challenge1Text">Nyamuk Aedes boleh berada berhampiran ruang kediaman, sekolah dan kawasan aktiviti komuniti.</p></div>
+        </article>
+        <article class="challenge-card featured reveal">
+          <div class="challenge-image"><img src="assets/challenge-hidden-water.webp" alt="Takungan air kecil pada alas pasu dan kawasan terlindung"></div><span>02</span>
+          <div class="challenge-copy"><h3 data-copy="challenge2Title">Punca mudah terlepas pandang</h3>
+          <p data-copy="challenge2Text">Takungan air kecil dan kawasan terlindung memerlukan pemeriksaan yang teliti serta berulang.</p></div>
+        </article>
+        <article class="challenge-card reveal">
+          <div class="challenge-image"><img src="assets/challenge-consistent-action.webp" alt="Guru dan murid menjalankan pemeriksaan pencegahan secara berkala"></div><span>03</span>
+          <div class="challenge-copy"><h3 data-copy="challenge3Title">Pencegahan perlu konsisten</h3>
+          <p data-copy="challenge3Text">Pemantauan manual sahaja sukar dikekalkan. Komuniti memerlukan tindakan yang lebih mudah dan teratur.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="system section" id="system">
+      <div class="system-sticky">
+        <div class="section-head reveal">
+          <p class="kicker" data-copy="systemKicker">02 · CARA BERFUNGSI</p>
+          <h2 data-copy="systemTitle">Satu sistem.<br>Lima peringkat.</h2>
+          <p data-copy="systemText">Pilih setiap peringkat untuk melihat bagaimana komponen AEDES-X bekerjasama.</p>
+        </div>
+        <div class="exploded-wrap reveal">
+          <div class="stage-ring" aria-hidden="true"></div>
+          <img src="assets/aedes-x-exploded-transparent.png" alt="Pandangan terurai AEDES-X">
+          <div class="active-stage-label"><span id="stageNumber">01</span><b id="stageLabel">KUASA & INPUT</b></div>
+        </div>
+      </div>
+      <div class="stage-list" role="tablist" aria-label="Lima peringkat AEDES-X">
+        <button class="stage active reveal" data-stage="0" role="tab" aria-selected="true"><span>01</span><div><b data-copy="stage1">Kuasa & Input</b><p data-copy="stage1p">Panel solar, suis utama, butang mod dan sensor LDR.</p></div></button>
+        <button class="stage reveal" data-stage="1" role="tab"><span>02</span><div><b data-copy="stage2">Otak Sistem</b><p data-copy="stage2p">ESP32 memproses input dan menyelaras operasi.</p></div></button>
+        <button class="stage reveal" data-stage="2" role="tab"><span>03</span><div><b data-copy="stage3">Tarikan & Aliran</b><p data-copy="stage3p">UV LED dan kipas menghasilkan tarikan serta sedutan.</p></div></button>
+        <button class="stage reveal" data-stage="3" role="tab"><span>04</span><div><b data-copy="stage4">Tangkapan</b><p data-copy="stage4p">Bakul jaring halus memerangkap nyamuk dengan selamat.</p></div></button>
+        <button class="stage reveal" data-stage="4" role="tab"><span>05</span><div><b data-copy="stage5">Penghasil CO₂</b><p data-copy="stage5p">Campuran yis, gula dan air suam menghasilkan isyarat tarikan.</p></div></button>
+      </div>
+    </section>
+
+    <section class="modes section" id="modes">
+      <div class="section-head center reveal">
+        <p class="kicker" data-copy="modesKicker">03 · OPERASI FLEKSIBEL</p>
+        <h2 data-copy="modesTitle">Tiga mod. Satu matlamat.</h2>
+        <p data-copy="modesText">Pilih situasi untuk melihat mod yang paling sesuai.</p>
+      </div>
+      <div class="mode-console reveal" id="modeStage">
+        <div class="mode-rail">
+          <div class="mode-rail-head">
+            <div class="mode-swipe-guide"><span>↔</span><div><b data-copy="modeSwipeTitle">PILIH MOD</b><small data-copy="modeSwipeText">Skrol atau leret ke tepi untuk menukar video</small></div></div>
+            <div class="mode-rail-controls">
+              <button id="modePrev" aria-label="Mod sebelumnya">←</button>
+              <button id="modeNext" aria-label="Mod seterusnya">→</button>
+            </div>
+          </div>
+          <div class="mode-selector" id="modeSelector" role="tablist" aria-label="Pilih mod AEDES-X">
+            <button class="mode-button active" data-mode="0" role="tab" aria-selected="true">
+              <span class="mode-button-icon">✦</span><span class="mode-button-copy"><small data-copy="modeButton1Label">01 · KAWALAN TERUS</small><b>Manual</b><em data-copy="modeButton1Place">Rumah & demonstrasi</em></span><i>→</i>
+            </button>
+            <button class="mode-button" data-mode="1" role="tab" aria-selected="false">
+              <span class="mode-button-icon">◐</span><span class="mode-button-copy"><small data-copy="modeButton2Label">02 · SENSOR CAHAYA</small><b>Auto LDR</b><em data-copy="modeButton2Place">Beranda & kawasan terlindung</em></span><i>→</i>
+            </button>
+            <button class="mode-button" data-mode="2" role="tab" aria-selected="false">
+              <span class="mode-button-icon">◷</span><span class="mode-button-copy"><small data-copy="modeButton3Label">03 · JADUAL OPERASI</small><b data-copy="timerName">Pemasa</b><em data-copy="modeButton3Place">Sekolah, pejabat & dewan</em></span><i>→</i>
+            </button>
+          </div>
+        </div>
+        <div class="mode-viewer">
+          <div class="mode-visual">
+            <video id="modeVideo" muted loop playsinline controls controlslist="nodownload" preload="metadata" poster="assets/aedes-x-transparent.png"></video>
+            <img id="modePoster" src="assets/aedes-x-transparent.png" alt="Visual mod Manual AEDES-X">
+            <span class="mode-signal signal-one"></span><span class="mode-signal signal-two"></span>
+            <div class="mode-video-label"><span data-copy="modeDemo">DEMONSTRASI MOD</span><b id="modeStatus">MANUAL AKTIF</b></div>
+            <div class="mode-video-progress" aria-hidden="true"><span id="modeVideoProgress"></span></div>
+          </div>
+          <div class="mode-detail">
+            <div><span class="mode-index" id="modeIndex">01 / 03</span><p class="mode-context" id="modeContext">RUMAH · DEMONSTRASI</p></div>
+            <h3 id="modeName">MANUAL</h3>
+            <p id="modeDescription">Kawalan terus melalui papan pemuka atau butang fizikal apabila pengguna mahu menghidupkan dan mematikan sistem sendiri.</p>
+            <div class="mode-meta"><span id="modeTrigger">Pencetus: Arahan pengguna</span><span id="modeBest">Sesuai: Kawalan dalaman</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dashboard section" id="dashboard">
+      <div class="dashboard-copy reveal">
+        <p class="kicker" data-copy="dashboardKicker">04 · KAWALAN BERSAMBUNG</p>
+        <h2 data-copy="dashTitle">Kawalan pada telefon.<br>Butang fizikal sebagai sokongan.</h2>
+        <p data-copy="dashText">Papan pemuka AEDES-X menyatukan status masa nyata, tiga mod operasi, jadual dan maklumat sistem. Jika hotspot terputus, butang fizikal masih boleh menukar mod.</p>
+        <div class="upgrade-card">
+          <div class="upgrade-icon">↻</div>
+          <div><span data-copy="nationalUpgrade">PENAMBAHBAIKAN PERINGKAT KEBANGSAAN</span><h3 data-copy="maintenance">Peringatan Penyelenggaraan</h3><p data-copy="maintenanceText">Peringatan berjadual untuk semakan jaring, penggantian campuran CO₂ dan pemeriksaan sistem—supaya penjagaan lebih konsisten.</p></div>
+          <strong data-copy="newLabel">BAHARU</strong>
+        </div>
+        <div class="control-badges"><span data-copy="badgeDashboard">◉ Papan pemuka</span><span data-copy="badgePhysical">● Butang fizikal</span><span data-copy="badgeHotspot">⌁ Hotspot setempat</span></div>
+        <button class="button dashboard-demo-button" id="playTeaser"><span class="play">▶</span><span data-copy="watchDashboard">Tonton demonstrasi papan pemuka</span></button>
+      </div>
+      <div class="dashboard-showcase reveal">
+        <div class="phone">
+          <div class="phone-top"><i></i><span></span><i></i></div>
+          <div class="screens" id="screens">
+            <img class="active" src="assets/dashboard-utama.png" alt="Halaman utama papan pemuka AEDES-X">
+            <img src="assets/dashboard-kawalan.png" alt="Halaman kawalan AEDES-X">
+            <img src="assets/dashboard-pemasa.png" alt="Halaman pemasa AEDES-X">
+            <img src="assets/dashboard-sistem.png" alt="Halaman sistem AEDES-X">
+          </div>
+        </div>
+        <div class="screen-nav" aria-label="Paparan papan pemuka">
+          <button class="active" data-screen="0" data-copy="screenHome">Utama</button><button data-screen="1" data-copy="screenControl">Kawalan</button><button data-screen="2" data-copy="screenTimer">Pemasa</button><button data-screen="3" data-copy="screenSystem">Sistem</button>
+        </div>
+        <div class="maintenance-pop"><i>✓</i><div><b data-copy="maintDue">Pemeriksaan seterusnya</b><span data-copy="maintDate">Bakul jaring · 7 hari</span></div></div>
+      </div>
+    </section>
+
+    <section class="compare section" id="compare">
+      <div class="compare-heading reveal">
+        <div class="section-head">
+          <p class="kicker" data-copy="compareKicker">05 · PERBANDINGAN</p>
+          <h2 data-copy="compareTitle">Bukan sekadar perangkap.<br>Satu sistem pintar.</h2>
+          <p data-copy="compareText">Pilih kaedah sedia ada untuk melihat perbezaan pendekatan, kawalan dan ciri sistem berbanding prototaip AEDES-X.</p>
+        </div>
+        <div class="compare-counter" aria-live="polite"><span id="compareCount">01</span><i></i><b>04</b></div>
+      </div>
+
+      <div class="compare-lab reveal" id="compareLab">
+        <div class="compare-tabs" role="tablist" aria-label="Kaedah untuk dibandingkan">
+          <button class="compare-tab active" data-compare="0" role="tab" aria-selected="true"><span>01</span><b data-copy="compareFogging">Fogging</b></button>
+          <button class="compare-tab" data-compare="1" role="tab" aria-selected="false"><span>02</span><b data-copy="compareAerosol">Semburan aerosol</b></button>
+          <button class="compare-tab" data-compare="2" role="tab" aria-selected="false"><span>03</span><b data-copy="compareCoil">Lingkaran nyamuk</b></button>
+          <button class="compare-tab" data-compare="3" role="tab" aria-selected="false"><span>04</span><b data-copy="compareUV">Perangkap UV biasa</b></button>
+        </div>
+
+        <div class="compare-stage">
+          <article class="compare-product compare-aedes" data-tilt>
+            <div class="compare-product-top"><span data-copy="ourPrototype">PROTOTAIP KAMI</span><b>AEDES-X</b></div>
+            <div class="compare-image"><span class="compare-halo"></span><img src="assets/aedes-x-transparent.png" alt="Prototaip AEDES-X"></div>
+            <p data-copy="aedesApproach">Menggabungkan CO₂, UV, aliran udara, tiga mod operasi dan kawalan IoT dalam satu sistem.</p>
+          </article>
+
+          <div class="compare-versus" aria-hidden="true"><span>A</span><i></i><b>VS</b><i></i><span>B</span></div>
+
+          <article class="compare-product compare-existing" data-tilt>
+            <div class="compare-product-top"><span data-copy="existingMethod">KAEDAH SEDIA ADA</span><b id="compareName">Fogging</b></div>
+            <div class="compare-image"><img id="compareImage" src="assets/compare-fogging.webp" alt="Kaedah fogging"></div>
+            <p id="compareSummary">Rawatan kawasan yang lazimnya dijalankan oleh petugas terlatih pada masa tertentu.</p>
+          </article>
+        </div>
+
+        <div class="compare-readout">
+          <div class="compare-note"><span data-copy="comparisonLens">LENSA PERBANDINGAN</span><h3 id="compareHeadline">Kawalan pintar berbanding rawatan berkala</h3><p id="compareDetail">AEDES-X direka untuk operasi setempat yang boleh dipantau, manakala fogging ialah rawatan kawasan pada masa tertentu.</p></div>
+          <div class="compare-matrix" id="compareMatrix" aria-live="polite"></div>
+        </div>
+        <p class="compare-disclaimer" data-copy="compareDisclaimer">Perbandingan ini menerangkan ciri dan cara penggunaan umum—bukan keputusan ujian keberkesanan, tuntutan klinikal atau pengganti langkah pencegahan denggi rasmi.</p>
+      </div>
+    </section>
+
+    <section class="validation section" id="validation">
+      <div class="section-head reveal">
+        <p class="kicker" data-copy="validationKicker">06 · VALIDASI AWAL</p>
+        <h2 data-copy="validationTitle">Telus tentang apa<br>yang telah diuji.</h2>
+        <p data-copy="validationText">Angka di bawah ialah data sementara untuk demonstrasi laman. Ia mesti diganti dengan keputusan sebenar selepas ujian 10 kali pada 29 September 2026.</p>
+        <div class="data-note"><i>!</i><span data-copy="dataNote"><b>Bukan keputusan rasmi.</b> Jangan gunakan angka ini sebagai bukti pertandingan sebelum ujian sebenar selesai.</span></div>
+      </div>
+      <div class="metric-grid">
+        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel1">Papan pemuka</span><b>10/10*</b></div><h3>8.4s</h3><p data-copy="metric1">Contoh median sambungan; semua contoh di bawah 30 saat.</p><div class="bar"><i style="--w:82%"></i></div></article>
+        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel2">Pertukaran 3 mod</span><b>10/10*</b></div><h3>0.8s</h3><p data-copy="metric2">Contoh masa tindak balas selepas arahan mod.</p><div class="bar"><i style="--w:92%"></i></div></article>
+        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel3">Tindak balas LDR</span><b>10/10*</b></div><h3>1.2s</h3><p data-copy="metric3">Contoh tindak balas apabila keadaan cahaya berubah.</p><div class="bar"><i style="--w:88%"></i></div></article>
+        <article class="metric reveal"><div class="metric-top"><span data-copy="metricLabel4">Butang tanpa talian</span><b>10/10*</b></div><h3>0.6s</h3><p data-copy="metric4">Contoh operasi butang fizikal tanpa hotspot.</p><div class="bar"><i style="--w:94%"></i></div></article>
+        <article class="metric pending reveal"><div class="metric-top"><span data-copy="metricLabel5">Operasi berterusan</span><b data-copy="notTested">BELUM DIUJI</b></div><h3>—</h3><p data-copy="metric5">Belum diuji sehingga isu haba ESP32 dinilai dengan selamat.</p><div class="bar"><i style="--w:12%"></i></div></article>
+      </div>
+    </section>
+
+    <section class="impact section">
+      <div class="impact-copy reveal">
+        <p class="kicker" data-copy="impactKicker">07 · INOVASI BERTERASKAN TUJUAN</p>
+        <h2 data-copy="impactTitle">Teknologi yang bermula<br>dengan komuniti.</h2>
+        <p data-copy="impactText">AEDES-X menghubungkan pembelajaran STEM dengan isu kesihatan sebenar—daripada idea, prototaip dan pengaturcaraan kepada pengujian yang bertanggungjawab.</p>
+      </div>
+      <div class="sdg-cards">
+        <article class="sdg sdg3 reveal"><img src="assets/sdg-3.png" alt="Matlamat Pembangunan Mampan 3: Kesihatan Baik dan Kesejahteraan"><div><b data-copy="sdg3Title">SDG 3 · KESIHATAN BAIK DAN KESEJAHTERAAN</b><p data-copy="sdg3">Menyokong kesedaran dan usaha pencegahan denggi dalam komuniti.</p></div></article>
+        <article class="sdg sdg9 reveal"><img src="assets/sdg-9.png" alt="Matlamat Pembangunan Mampan 9: Industri, Inovasi dan Infrastruktur"><div><b data-copy="sdg9Title">SDG 9 · INDUSTRI, INOVASI DAN INFRASTRUKTUR</b><p data-copy="sdg9">Menggalakkan inovasi IoT yang dibina, diuji dan diterangkan oleh murid.</p></div></article>
+      </div>
+    </section>
+
+    <section class="finale section">
+      <div class="finale-bg"></div>
+      <div class="finale-product reveal"><img src="assets/aedes-x-transparent.png" alt="Pandangan akhir produk AEDES-X"></div>
+      <div class="finale-copy reveal">
+        <p class="kicker">IOT RANGERS · 2026</p>
+        <h2>AEDES-X</h2>
+        <p data-copy="finalText">Inovasi kecil. Impak yang bermakna.</p>
+        <div class="school-lockup"><img src="assets/school-logo-transparent.png" alt="Logo SJKT Ladang Rinching"><div><b>SJKT LADANG RINCHING</b><span>IOT RANGERS</span></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>© 2026 IOT Rangers · SJKT Ladang Rinching</span><a href="#home" data-copy="backTop">Kembali ke atas ↑</a></footer>
+
+  <dialog id="teaserModal">
+    <button class="modal-close" aria-label="Tutup">×</button>
+    <video controls playsinline><source src="assets/demo-dashboard.mp4" type="video/mp4"></video>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
