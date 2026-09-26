@@ -78,32 +78,49 @@ addEventListener('pointermove', (event) => {
 // Animasi cinematic berpandukan skrol — 120 bingkai daripada video 10 saat.
 const cinemaSection = $('.scroll-cinema');
 const canvas = $('#cinemaCanvas');
-const context = canvas.getContext('2d', { alpha: false });
+const fallbackVideo = $('.cinema-fallback');
+const context = canvas ? canvas.getContext('2d', { alpha: false }) : null;
 const frameCount = 120;
 const frames = new Array(frameCount);
 let loadedFrames = 0;
 let currentFrame = 0;
 let requestedFrame = 0;
 let animationStarted = false;
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 function framePath(index) {
   return `assets/cinematic-frames/frame-${String(index + 1).padStart(4, '0')}.webp`;
 }
 
+function activateCinemaFallback() {
+  if (canvas) canvas.style.display = 'none';
+  if (fallbackVideo) {
+    fallbackVideo.style.display = 'block';
+    fallbackVideo.setAttribute('aria-hidden', 'false');
+    fallbackVideo.play().catch(() => {});
+  }
+  const loader = $('#cinemaLoader');
+  if (loader) loader.classList.add('hidden');
+}
+
 function drawFrame(index) {
+  if (!context) return;
   const image = frames[index];
   if (!image || !image.complete || !image.naturalWidth) return;
 
   const width = canvas.width;
   const height = canvas.height;
-  const containOnMobile = innerWidth < 700;
-  const scale = containOnMobile
+  const isMobile = innerWidth < 768;
+  const scale = isMobile
     ? Math.min(width / image.naturalWidth, height / image.naturalHeight)
     : Math.max(width / image.naturalWidth, height / image.naturalHeight);
   const renderedWidth = image.naturalWidth * scale;
   const renderedHeight = image.naturalHeight * scale;
   const x = (width - renderedWidth) / 2;
-  const y = (height - renderedHeight) / 2;
+  // On mobile portrait, position slightly higher to accommodate text copy
+  const y = isMobile && innerHeight > innerWidth
+    ? Math.max(0, (height - renderedHeight) * 0.32)
+    : (height - renderedHeight) / 2;
 
   context.fillStyle = '#020604';
   context.fillRect(0, 0, width, height);
@@ -111,6 +128,7 @@ function drawFrame(index) {
 }
 
 function resizeCinema() {
+  if (!canvas || !context) return;
   const ratio = Math.min(devicePixelRatio || 1, 2);
   canvas.width = Math.round(innerWidth * ratio);
   canvas.height = Math.round(innerHeight * ratio);
@@ -127,16 +145,23 @@ function updateCinemaCopy(progress) {
   $$('.cinema-copy').forEach((element) => {
     element.classList.toggle('active', Number(element.dataset.beat) === activeBeat);
   });
-  $('#cinemaProgress').style.width = `${progress * 100}%`;
+  const progressEl = $('#cinemaProgress');
+  if (progressEl) progressEl.style.width = `${progress * 100}%`;
 }
 
 function updateCinemaFromScroll() {
+  if (!cinemaSection) return;
+  if (prefersReducedMotion) {
+    updateCinemaCopy(0);
+    return;
+  }
   const rect = cinemaSection.getBoundingClientRect();
   const distance = cinemaSection.offsetHeight - innerHeight;
-  const progress = Math.min(1, Math.max(0, -rect.top / distance));
+  const progress = distance > 0 ? Math.min(1, Math.max(0, -rect.top / distance)) : 0;
   requestedFrame = Math.min(frameCount - 1, Math.round(progress * (frameCount - 1)));
   updateCinemaCopy(progress);
-  $('#cinemaScrollGuide').classList.toggle('hidden', progress > 0.07);
+  const guide = $('#cinemaScrollGuide');
+  if (guide) guide.classList.toggle('hidden', progress > 0.07);
 }
 
 function animationLoop() {
@@ -144,32 +169,63 @@ function animationLoop() {
     currentFrame = requestedFrame;
     drawFrame(currentFrame);
   }
-  requestAnimationFrame(animationLoop);
+  if (!prefersReducedMotion) {
+    requestAnimationFrame(animationLoop);
+  }
 }
 
-for (let index = 0; index < frameCount; index += 1) {
-  const image = new Image();
-  image.decoding = 'async';
-  image.src = framePath(index);
-  image.onload = () => {
-    loadedFrames += 1;
-    if (index === 0) {
-      resizeCinema();
-      drawFrame(0);
-    }
-    if (index === currentFrame || index === requestedFrame) drawFrame(index);
-    if (loadedFrames >= 10) $('#cinemaLoader').classList.add('hidden');
-    if (!animationStarted) {
-      animationStarted = true;
-      animationLoop();
-    }
+if (!context) {
+  activateCinemaFallback();
+} else if (prefersReducedMotion) {
+  // In reduced-motion mode, only load frame 0 for static showcase
+  const firstFrame = new Image();
+  firstFrame.src = framePath(0);
+  firstFrame.onload = () => {
+    frames[0] = firstFrame;
+    resizeCinema();
+    drawFrame(0);
+    $('#cinemaLoader')?.classList.add('hidden');
   };
-  frames[index] = image;
-}
+  firstFrame.onerror = activateCinemaFallback;
+} else {
+  // Safety timeout: if frames take too long to load (e.g. slow mobile connection), switch to fallback video
+  const fallbackTimer = setTimeout(() => {
+    if (loadedFrames < 5) activateCinemaFallback();
+  }, 4000);
 
-addEventListener('scroll', updateCinemaFromScroll, { passive: true });
-addEventListener('resize', resizeCinema);
-updateCinemaFromScroll();
+  for (let index = 0; index < frameCount; index += 1) {
+    const image = new Image();
+    image.decoding = 'async';
+    image.src = framePath(index);
+    image.onload = () => {
+      loadedFrames += 1;
+      if (index === 0) {
+        resizeCinema();
+        drawFrame(0);
+      }
+      if (index === currentFrame || index === requestedFrame) drawFrame(index);
+      if (loadedFrames >= 8) {
+        clearTimeout(fallbackTimer);
+        $('#cinemaLoader')?.classList.add('hidden');
+      }
+      if (!animationStarted) {
+        animationStarted = true;
+        animationLoop();
+      }
+    };
+    image.onerror = () => {
+      if (loadedFrames === 0 && index === 0) {
+        clearTimeout(fallbackTimer);
+        activateCinemaFallback();
+      }
+    };
+    frames[index] = image;
+  }
+
+  addEventListener('scroll', updateCinemaFromScroll, { passive: true });
+  addEventListener('resize', resizeCinema);
+  updateCinemaFromScroll();
+}
 
 const stageLabels = {
   ms: ['KUASA & INPUT', 'OTAK SISTEM', 'TARIKAN & ALIRAN', 'TANGKAPAN', 'PENGHASIL CO₂'],
@@ -400,10 +456,47 @@ $('.modal-close').addEventListener('click', () => {
   modal.querySelector('video').pause();
   modal.close();
 });
-modal.addEventListener('click', (event) => {
-  if (event.target === modal) {
-    modal.querySelector('video').pause();
-    modal.close();
+const navToggle = $('#navToggle');
+const mobileNav = $('#mobileNav');
+const navClose = $('#navClose');
+const navBackdrop = $('#navBackdrop');
+
+function openMobileNav() {
+  if (!mobileNav || !navToggle) return;
+  navToggle.setAttribute('aria-expanded', 'true');
+  navToggle.classList.add('active');
+  mobileNav.classList.add('open');
+  mobileNav.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileNav() {
+  if (!mobileNav || !navToggle) return;
+  navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.classList.remove('active');
+  mobileNav.classList.remove('open');
+  mobileNav.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileNav && mobileNav.classList.contains('open');
+    if (isOpen) closeMobileNav(); else openMobileNav();
+  });
+}
+if (navClose) navClose.addEventListener('click', closeMobileNav);
+if (navBackdrop) navBackdrop.addEventListener('click', closeMobileNav);
+
+$$('.mobile-nav-link').forEach((link) => {
+  link.addEventListener('click', () => {
+    closeMobileNav();
+  });
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) {
+    closeMobileNav();
   }
 });
 

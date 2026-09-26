@@ -20,7 +20,7 @@
     <a class="brand" href="#home" aria-label="AEDES-X home">
       <img src="assets/aedes-x-logo-horizontal.png" alt="AEDES-X">
     </a>
-    <nav aria-label="Navigasi utama">
+    <nav class="desktop-nav" aria-label="Navigasi utama">
       <a href="#system" data-copy="navSystem">Sistem</a>
       <a href="#modes" data-copy="navModes">3 Mod</a>
       <a href="#dashboard" data-copy="navDashboard">Papan Pemuka</a>
@@ -33,8 +33,35 @@
         <button class="active" data-lang="ms" aria-pressed="true">BM</button>
         <button data-lang="en" aria-pressed="false">EN</button>
       </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <div class="mobile-nav-drawer" id="mobileNav" aria-hidden="true">
+    <div class="mobile-nav-backdrop" id="navBackdrop"></div>
+    <div class="mobile-nav-panel">
+      <div class="mobile-nav-header">
+        <span class="mobile-nav-brand">
+          <img src="assets/aedes-x-logo-horizontal.png" alt="AEDES-X">
+        </span>
+        <button class="mobile-nav-close" id="navClose" aria-label="Tutup menu">✕</button>
+      </div>
+      <nav class="mobile-nav-links" aria-label="Navigasi mudah alih">
+        <a href="#system" class="mobile-nav-link" data-copy="navSystem">Sistem</a>
+        <a href="#modes" class="mobile-nav-link" data-copy="navModes">3 Mod</a>
+        <a href="#dashboard" class="mobile-nav-link" data-copy="navDashboard">Papan Pemuka</a>
+        <a href="#compare" class="mobile-nav-link" data-copy="navCompare">Bandingkan</a>
+        <a href="#validation" class="mobile-nav-link" data-copy="navValidation">Validasi</a>
+      </nav>
+      <div class="mobile-nav-footer">
+        <span class="national-tag" data-copy="nationalTag">PERINGKAT KEBANGSAAN · 2026</span>
+      </div>
+    </div>
+  </div>
 
   <main>
     <section class="scroll-cinema" id="home" aria-label="Pengenalan cinematic AEDES-X">
