@@ -1,7 +1,8 @@
 <!doctype html>
-<html lang="ms">
+<html lang="ms" class="notranslate" translate="no">
 <head>
   <meta charset="utf-8">
+  <meta name="google" content="notranslate">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#06100d">
   <meta name="description" content="AEDES-X — prototaip perangkap nyamuk pintar oleh IoT Rangers, SJKT Ladang Rinching.">
@@ -12,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="notranslate">
   <div class="cursor-glow" aria-hidden="true"></div>
   <div class="scroll-meter" aria-hidden="true"><span></span></div>
 
@@ -124,25 +125,239 @@
       </div>
     </section>
 
-    <section class="system section" id="system">
-      <div class="system-sticky">
-        <div class="section-head reveal">
-          <p class="kicker" data-copy="systemKicker">02 · CARA BERFUNGSI</p>
-          <h2 data-copy="systemTitle">Satu sistem.<br>Lima peringkat.</h2>
-          <p data-copy="systemText">Pilih setiap peringkat untuk melihat bagaimana komponen AEDES-X bekerjasama.</p>
-        </div>
-        <div class="exploded-wrap reveal">
-          <div class="stage-ring" aria-hidden="true"></div>
-          <img src="assets/aedes-x-exploded-transparent.png" alt="Pandangan terurai AEDES-X">
-          <div class="active-stage-label"><span id="stageNumber">01</span><b id="stageLabel">KUASA & INPUT</b></div>
-        </div>
+    <section class="system section" id="system" aria-label="X-Ray Explorer dan Anatomi Sistem AEDES-X">
+      <div class="section-head center reveal">
+        <p class="kicker" data-copy="systemKicker">02 · CARA BERFUNGSI</p>
+        <h2 data-copy="systemTitle">Satu sistem.<br>Lima peringkat.</h2>
+        <p data-copy="systemText">Teroka anatomi fizikal prototaip AEDES-X secara interaktif untuk memahami fungsi setiap komponen STEM sebenar.</p>
       </div>
-      <div class="stage-list" role="tablist" aria-label="Lima peringkat AEDES-X">
-        <button class="stage active reveal" data-stage="0" role="tab" aria-selected="true"><span>01</span><div><b data-copy="stage1">Kuasa & Input</b><p data-copy="stage1p">Panel solar, suis utama, butang mod dan sensor LDR.</p></div></button>
-        <button class="stage reveal" data-stage="1" role="tab"><span>02</span><div><b data-copy="stage2">Otak Sistem</b><p data-copy="stage2p">ESP32 memproses input dan menyelaras operasi.</p></div></button>
-        <button class="stage reveal" data-stage="2" role="tab"><span>03</span><div><b data-copy="stage3">Tarikan & Aliran</b><p data-copy="stage3p">UV LED dan kipas menghasilkan tarikan serta sedutan.</p></div></button>
-        <button class="stage reveal" data-stage="3" role="tab"><span>04</span><div><b data-copy="stage4">Tangkapan</b><p data-copy="stage4p">Bakul jaring halus memerangkap nyamuk dengan selamat.</p></div></button>
-        <button class="stage reveal" data-stage="4" role="tab"><span>05</span><div><b data-copy="stage5">Penghasil CO₂</b><p data-copy="stage5p">Campuran yis, gula dan air suam menghasilkan isyarat tarikan.</p></div></button>
+
+      <div class="xray-exhibit reveal" id="xrayExhibit" data-active-stage="0">
+        <!-- Top Mission Command Bar -->
+        <div class="xray-mission-bar">
+          <div class="mission-status-pill">
+            <span class="mission-dot"></span>
+            <span class="mission-status-label" data-copy="missionStatusLabel">STATUS ANATOMI:</span>
+            <b class="mission-status-text" id="missionStatusText">PANDANGAN KESELURUHAN</b>
+          </div>
+
+          <div class="xray-stage-nav" role="tablist" aria-label="Pilih peringkat AEDES-X">
+            <button class="stage-nav-btn active" data-stage="0" role="tab" aria-selected="true">
+              <span class="stage-nav-num">00</span>
+              <span class="stage-nav-label" data-copy="stageAll">Semua</span>
+            </button>
+            <button class="stage-nav-btn" data-stage="1" role="tab" aria-selected="false">
+              <span class="stage-nav-num">01</span>
+              <span class="stage-nav-label" data-copy="stage1">Kuasa & Input</span>
+            </button>
+            <button class="stage-nav-btn" data-stage="2" role="tab" aria-selected="false">
+              <span class="stage-nav-num">02</span>
+              <span class="stage-nav-label" data-copy="stage2">Otak Sistem</span>
+            </button>
+            <button class="stage-nav-btn" data-stage="3" role="tab" aria-selected="false">
+              <span class="stage-nav-num">03</span>
+              <span class="stage-nav-label" data-copy="stage3">Tarikan & Aliran</span>
+            </button>
+            <button class="stage-nav-btn" data-stage="4" role="tab" aria-selected="false">
+              <span class="stage-nav-num">04</span>
+              <span class="stage-nav-label" data-copy="stage4">Tangkapan</span>
+            </button>
+            <button class="stage-nav-btn" data-stage="5" role="tab" aria-selected="false">
+              <span class="stage-nav-num">05</span>
+              <span class="stage-nav-label" data-copy="stage5">Penghasil CO₂</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Interactive Arena -->
+        <div class="xray-arena">
+          
+          <!-- Device Viewport with Interactive Hotspots -->
+          <div class="xray-device-card" id="xrayDeviceCard">
+            <div class="xray-card-header">
+              <span class="xray-badge"><span></span> X-RAY EXPLORER</span>
+              <div class="xray-instruction">
+                <span class="hand-pulse" aria-hidden="true">👆</span>
+                <span data-copy="xrayInstruction">Tekan bahagian alat untuk teroka</span>
+              </div>
+              <button class="btn-reset-view" id="btnResetView" aria-label="Kembali ke peranti penuh">
+                <i>↺</i> <span data-copy="fullDeviceBtn">Peranti Penuh</span>
+              </button>
+            </div>
+
+            <div class="xray-viewport-wrap">
+              <div class="xray-grid-bg" aria-hidden="true"></div>
+              
+              <div class="xray-camera-target" id="xrayCameraTarget">
+                <img src="assets/aedes-x-transparent.png" alt="Prototaip Fizikal AEDES-X" class="xray-device-img" id="xrayDeviceImg">
+                
+                <div class="xray-focus-ring" id="xrayFocusRing" aria-hidden="true"></div>
+
+                <!-- Five Numbered Interactive Hotspots -->
+                <div class="hotspot-group" role="group" aria-label="Titik interaktif pada komponen alat">
+                  <button class="xray-hotspot" data-hotspot="1" style="--hx: 56%; --hy: 14%;" aria-label="01: Kuasa dan Input">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-pin">01</span>
+                    <span class="hotspot-tag" data-copy="stage1">Kuasa & Input</span>
+                  </button>
+
+                  <button class="xray-hotspot" data-hotspot="2" style="--hx: 47%; --hy: 32%;" aria-label="02: Otak Sistem">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-pin">02</span>
+                    <span class="hotspot-tag" data-copy="stage2">Otak Sistem</span>
+                  </button>
+
+                  <button class="xray-hotspot" data-hotspot="3" style="--hx: 52%; --hy: 47%;" aria-label="03: Tarikan dan Aliran">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-pin">03</span>
+                    <span class="hotspot-tag" data-copy="stage3">Tarikan & Aliran</span>
+                  </button>
+
+                  <button class="xray-hotspot" data-hotspot="4" style="--hx: 54%; --hy: 62%;" aria-label="04: Tangkapan">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-pin">04</span>
+                    <span class="hotspot-tag" data-copy="stage4">Tangkapan</span>
+                  </button>
+
+                  <button class="xray-hotspot" data-hotspot="5" style="--hx: 50%; --hy: 78%;" aria-label="05: Penghasil CO2">
+                    <span class="hotspot-pulse"></span>
+                    <span class="hotspot-pin">05</span>
+                    <span class="hotspot-tag" data-copy="stage5">Penghasil CO₂</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mission Control Command Panel -->
+          <div class="mission-panel" id="missionPanel">
+            
+            <!-- Default Overview Card List -->
+            <div class="mission-overview-view" id="missionOverviewView">
+              <div class="mission-overview-head">
+                <span class="mission-kicker" data-copy="missionKicker">KONSOL KAWALAN PERTANDINGAN</span>
+                <h3 data-copy="missionHeadline">Anatomi Modular AEDES-X</h3>
+                <p data-copy="missionIntro">Pilih mana-mana satu daripada lima bahagian pada alat atau panel ini untuk meneliti komponen fizikal, gambarajah terperinci dan mekanisme STEM sebenar.</p>
+              </div>
+
+              <div class="mission-stage-list">
+                <button class="mission-card" data-stage="1">
+                  <span class="mission-card-num">01</span>
+                  <div class="mission-card-info">
+                    <b data-copy="stage1">Kuasa & Input</b>
+                    <p data-copy="stage1p">Panel solar, suis utama, butang mod dan sensor LDR.</p>
+                  </div>
+                  <span class="mission-card-arrow">↗</span>
+                </button>
+
+                <button class="mission-card" data-stage="2">
+                  <span class="mission-card-num">02</span>
+                  <div class="mission-card-info">
+                    <b data-copy="stage2">Otak Sistem</b>
+                    <p data-copy="stage2p">ESP32 memproses input dan menyelaras operasi.</p>
+                  </div>
+                  <span class="mission-card-arrow">↗</span>
+                </button>
+
+                <button class="mission-card" data-stage="3">
+                  <span class="mission-card-num">03</span>
+                  <div class="mission-card-info">
+                    <b data-copy="stage3">Tarikan & Aliran</b>
+                    <p data-copy="stage3p">UV LED dan kipas menghasilkan tarikan serta sedutan.</p>
+                  </div>
+                  <span class="mission-card-arrow">↗</span>
+                </button>
+
+                <button class="mission-card" data-stage="4">
+                  <span class="mission-card-num">04</span>
+                  <div class="mission-card-info">
+                    <b data-copy="stage4">Tangkapan</b>
+                    <p data-copy="stage4p">Bakul jaring halus memerangkap nyamuk dengan selamat.</p>
+                  </div>
+                  <span class="mission-card-arrow">↗</span>
+                </button>
+
+                <button class="mission-card" data-stage="5">
+                  <span class="mission-card-num">05</span>
+                  <div class="mission-card-info">
+                    <b data-copy="stage5">Penghasil CO₂</b>
+                    <p data-copy="stage5p">Campuran yis, gula dan air suam menghasilkan isyarat tarikan.</p>
+                  </div>
+                  <span class="mission-card-arrow">↗</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Detail Exhibit View (Revealed when a stage is selected) -->
+            <div class="mission-detail-view" id="missionDetailView" aria-live="polite">
+              <div class="detail-nav-header">
+                <button class="detail-back-btn" id="btnBackToFull" aria-label="Kembali ke peranti penuh">
+                  <span>←</span>
+                  <b data-copy="backToFullBtn">Kembali ke Peranti Penuh</b>
+                </button>
+                <div class="detail-step-badge">
+                  <span id="detailStepNum">PERINGKAT 01</span>
+                  <small>/ 05</small>
+                </div>
+                <div class="detail-prev-next">
+                  <button class="detail-nav-btn" id="btnPrevStage" aria-label="Peringkat sebelumnya" title="Peringkat sebelumnya">‹</button>
+                  <button class="detail-nav-btn" id="btnNextStage" aria-label="Peringkat seterusnya" title="Peringkat seterusnya">›</button>
+                </div>
+              </div>
+
+              <!-- Media Showcase with Stage PNG & Micro-motion overlay -->
+              <div class="stage-media-wrap">
+                <div class="stage-img-frame" id="stageImgFrame">
+                  <img id="stageDetailImg" src="assets/stage-1.png" alt="Gambar Terperinci Peringkat">
+                  
+                  <!-- Motion design overlays -->
+                  <div class="stage-motion-layer" id="stageMotionLayer" aria-hidden="true">
+                    <div class="fx-solar-sweep" id="fxSolar"></div>
+                    <div class="fx-circuit-pulse" id="fxCircuit">
+                      <span class="circuit-dot d1"></span>
+                      <span class="circuit-dot d2"></span>
+                      <span class="circuit-dot d3"></span>
+                    </div>
+                    <div class="fx-uv-airflow" id="fxUv">
+                      <span class="uv-glow-beam"></span>
+                      <span class="flow-wind w1"></span>
+                      <span class="flow-wind w2"></span>
+                      <span class="flow-wind w3"></span>
+                    </div>
+                    <div class="fx-drawer-shimmer" id="fxDrawer">
+                      <span class="drawer-arrow-glow"></span>
+                    </div>
+                    <div class="fx-bubbles-wrap" id="fxBubbles">
+                      <span class="bubble b1"></span>
+                      <span class="bubble b2"></span>
+                      <span class="bubble b3"></span>
+                      <span class="bubble b4"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Detailed Explanation Text -->
+              <div class="stage-text-wrap">
+                <div class="stage-meta-row">
+                  <span class="stage-role-tag" id="detailRoleTag">PUNCA KUASA & KAWALAN</span>
+                  <span class="stage-hw-tag" id="detailHwTag">SOLAR · LDR · SUIS</span>
+                </div>
+                <h3 id="detailHeadline">Tenaga Solar & Kawalan Input Pintar</h3>
+                <p id="detailDescription">Panel solar dan sumber kuasa menyokong peranti secara mampan; suis utama, butang mod fizikal dan sensor LDR membekalkan input kawalan untuk kegunaan automatik atau manual.</p>
+                
+                <div class="stage-chips" id="detailChips">
+                  <span>Panel Solar 5V</span>
+                  <span>Sensor LDR</span>
+                  <span>Suis Utama</span>
+                  <span>Butang Mod Fizikal</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
       </div>
     </section>
 
